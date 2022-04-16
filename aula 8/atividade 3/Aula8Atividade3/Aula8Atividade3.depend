@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1649631867 source:c:\users\augusto\desktop\ed\aula 8\atividade 3\aula8atividade3\minhalib.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	"minhalib.h"
+
+1649626629 c:\users\augusto\desktop\ed\aula 8\atividade 3\aula8atividade3\minhalib.h
+
+1649632090 source:c:\users\augusto\desktop\ed\aula 8\atividade 3\aula8atividade3\main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<locale.h>
+	"minhalib.h"
+
