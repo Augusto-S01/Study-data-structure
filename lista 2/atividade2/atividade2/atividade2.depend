@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1650575508 source:d:\estudos\ed\study-data-structure\lista 2\atividade2\atividade2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	"minhalib.h"
+
+1650575482 d:\estudos\ed\study-data-structure\lista 2\atividade2\atividade2\minhalib.h
+
+1650575474 source:d:\estudos\ed\study-data-structure\lista 2\atividade2\atividade2\minhalib.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	"minhalib.h"
+
