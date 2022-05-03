@@ -10,118 +10,112 @@
 #include <stdlib.h>
 #include <string.h>
 
-
-
-
-typedef struct conta{
+typedef struct Conta{
     int id;
     char tipoDeConta[20];
     char nomeDoCliente[50];
     float saldo;
-} conta;
+} Conta;
 
-int contagemDeContas = 0;
+int ContagemDeContas = 0;
 
-conta* criaArrayDinamicoDeContas(int numeroDeContas);
-conta preencheConta();
-void fechaArquivo(FILE* arquivo);
-void liberaConta(conta* conta);
+Conta* criaArrayDinamicoDeContas(int n);
+Conta preencheConta();
+void imprimeContas(Conta* Contas, int n);
+void liberaConta(Conta* Conta);
 
 
-void main(){
-    
-    int numeroDeContas;
-    printf("Seja bem vindo ao gerenciador de contas\n");
-    printf("Digite o numero de contas que deseja alocar na memoria\n");
+void main() {
 
-    scanf("%d", &numeroDeContas);
+    int n;
+    printf("Seja bem vindo ao gerenciador de Contas\n");
+    printf("Digite o numero de Contas que deseja alocar na memoria\n");
 
-    conta* contas = criaArrayDinamicoDeContas(numeroDeContas);
+    scanf("%d", &n);
 
-    for(int i = 0; i < numeroDeContas; i++){
-        contas[i] = preencheConta();
+    Conta* Contas = criaArrayDinamicoDeContas(n);
+
+    for(int i = 0; i < n; i++){
+        Contas[i] = preencheConta();
     }
 
-    for(int i = 0; i < numeroDeContas; i++){
-        system("cls");
-        printf("Conta %d\n", contas[i].id);
-        printf("Tipo de conta: %s\n", contas[i].tipoDeConta);
-        printf("Nome do cliente: %s\n", contas[i].nomeDoCliente);
-        printf("Saldo: %f\n", contas[i].saldo);
-        printf("\n");
-        system("pause");
-    }
-    
+    imprimeContas(Contas, n);
+
     FILE *f;
-    f = fopen("contas.txt", "wb");
+    f = fopen("Contas.txt", "wb");
     if(f == NULL){
         printf("Erro ao abrir o arquivo\n");
         exit(1);
     }
 
-    fwrite(contas, sizeof(conta), numeroDeContas, f);
+    fwrite(Contas, sizeof(Conta), n, f);
 
-    fechaArquivo(f);
-    liberaConta(contas);
+    fclose(f);
+
+    liberaConta(Contas);
 
 }
 
-void fechaArquivo(FILE* arquivo){
-    fclose(arquivo);
+Conta* criaArrayDinamicoDeContas(int n) {
+    Conta *Contas = (Conta*) malloc(n * sizeof(Conta));
+    return Contas;
 }
 
-void liberaConta(conta* conta){
-    free(conta);
-}
+Conta preencheConta() {
+    Conta Conta;
 
-conta* criaArrayDinamicoDeContas(int numeroDeContas){
-    conta *contas = (conta*) malloc(numeroDeContas * sizeof(conta));
-    return contas;
-}
-
-conta preencheConta(){
-    conta conta;
-
-    contagemDeContas++;
-    printf("Digite os dados da conta de id:  %d\n", contagemDeContas);
-    conta.id = contagemDeContas;
+    ContagemDeContas++;
+    printf("Digite os dados da Conta de id:  %d\n", ContagemDeContas);
+    Conta.id = ContagemDeContas;
 
     int tipoDeConta = 0;
-    
 
-    do
-    {
-        printf("Digite o numero respectivo ao tipo de conta:\n");
+
+    do {
+        printf("Digite o numero respectivo ao tipo de Conta:\n");
         printf("1 - Conta Corrente\n");
-        printf("2 - Conta Poupança\n");
+        printf("2 - Conta Poupanca\n");
         printf("3 - Conta Investimento\n");
         scanf("%d", &tipoDeConta);
 
-        if(tipoDeConta < 1 || tipoDeConta > 3)
-        {
+        if(tipoDeConta < 1 || tipoDeConta > 3) {
             printf("Opcao invalida\n");
             tipoDeConta = 0;
-        }else{
-            switch(tipoDeConta){
+        } else {
+            switch(tipoDeConta) {
                 case 1:
-                    strcpy(conta.tipoDeConta, "Conta Corrente");
+                    strcpy(Conta.tipoDeConta, "Conta Corrente");
                     break;
                 case 2:
-                    strcpy(conta.tipoDeConta, "Conta Poupança");
+                    strcpy(Conta.tipoDeConta, "Conta Poupanca");
                     break;
                 case 3:
-                    strcpy(conta.tipoDeConta, "Conta Investimento");
+                    strcpy(Conta.tipoDeConta, "Conta Investimento");
                     break;
             }
         }
 
     } while (tipoDeConta == 0);
-    
-    
 
     printf("Digite o nome do cliente\n");
-    scanf("%s", &conta.nomeDoCliente);
-    printf("Digite o saldo da conta\n");
-    scanf("%f", &conta.saldo);
-    return conta;
+    scanf("%s", &Conta.nomeDoCliente);
+    printf("Digite o saldo da Conta\n");
+    scanf("%f", &Conta.saldo);
+    return Conta;
+}
+
+void imprimeContas(Conta *Contas, int n) {
+    for(int i = 0; i < n; i++) {
+            system("cls");
+            printf("Conta %d\n", Contas[i].id);
+            printf("Tipo de Conta: %s\n", Contas[i].tipoDeConta);
+            printf("Nome do cliente: %s\n", Contas[i].nomeDoCliente);
+            printf("Saldo: %f\n", Contas[i].saldo);
+            printf("\n");
+            system("pause");
+        }
+}
+
+void liberaConta(Conta* Conta) {
+    free(Conta);
 }
