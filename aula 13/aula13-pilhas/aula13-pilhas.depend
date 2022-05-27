@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1653661365 source:d:\estudos\ed\study-data-structure\aula 13\aula13-pilhas\pilhad.c
+	<stdio.h>
+	<stdlib.h>
+	"pilhaD.h"
+
+1653661590 d:\estudos\ed\study-data-structure\aula 13\aula13-pilhas\pilhad.h
+
+1653661588 source:d:\estudos\ed\study-data-structure\aula 13\aula13-pilhas\main.c
+	<stdio.h>
+	<stdlib.h>
+	"pilhaD.h"
+

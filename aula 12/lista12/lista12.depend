@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1653092198 source:d:\estudos\ed\study-data-structure\aula 12\lista12\main.c
+	<stdio.h>
+	<stdlib.h>
+	"listaLigada.h"
+
+1653094183 d:\estudos\ed\study-data-structure\aula 12\lista12\listaligada.h
+
+1653095323 source:d:\estudos\ed\study-data-structure\aula 12\lista12\listaligada.c
+	<stdio.h>
+	<stdlib.h>
+	"listaLigada.h"
+
