@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1656542449 source:d:\estudos\ed\study-data-structure\projetofinal\projetofinal\minhalib.c
+	<stdio.h>
+	<stdlib.h>
+	"minhalib.h"
+
+1656542886 d:\estudos\ed\study-data-structure\projetofinal\projetofinal\minhalib.h
+
+1656543546 source:d:\estudos\ed\study-data-structure\projetofinal\projetofinal\main.c
+	<stdio.h>
+	<stdlib.h>
+	"minhalib.h"
+	<string.h>
+	<locale.h>
+

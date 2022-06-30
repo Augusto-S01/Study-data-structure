@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1653849334 source:d:\estudos\ed\study-data-structure\aula 14\aula14\listaddupla.c
+	<stdio.h>
+	<stdlib.h>
+	"listaDDupla.h"
+
+1653846972 d:\estudos\ed\study-data-structure\aula 14\aula14\listaddupla.h
+
+1653850107 source:d:\estudos\ed\study-data-structure\aula 14\aula14\main.c
+	<stdio.h>
+	<stdlib.h>
+	"listaDDupla.h"
+

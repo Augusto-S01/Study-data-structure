@@ -1,0 +1,23 @@
+# depslib dependency file v1.0
+1656557256 source:d:\estudos\ed\study-data-structure\projetofinal\projetofinal\listaligada.c
+	<stdio.h>
+	<stdlib.h>
+	"listaLigada.h"
+
+1656557241 d:\estudos\ed\study-data-structure\projetofinal\projetofinal\listaligada.h
+
+1656556542 source:d:\estudos\ed\study-data-structure\projetofinal\projetofinal\main.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+	"listaLigada.h"
+	"print.h"
+
+1656550163 d:\estudos\ed\study-data-structure\projetofinal\projetofinal\print.h
+
+1656551388 source:d:\estudos\ed\study-data-structure\projetofinal\projetofinal\print.c
+	<stdio.h>
+	<stdlib.h>
+	"print.h"
+	"listaLigada.h"
+
