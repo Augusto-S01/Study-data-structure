@@ -40,3 +40,10 @@ void printSair(){
 }
 
 
+void printPressioneQualquerTecla(){
+    printf("\n\n");
+    printf("Pressione qualquer tecla para continuar...\n");
+    fflush(stdin);
+    getch();
+    system("cls");
+}

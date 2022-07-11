@@ -6,16 +6,16 @@
 
 1656557241 d:\estudos\ed\study-data-structure\projetofinal\projetofinal\listaligada.h
 
-1656556542 source:d:\estudos\ed\study-data-structure\projetofinal\projetofinal\main.c
+1656809586 source:d:\estudos\ed\study-data-structure\projetofinal\projetofinal\main.c
 	<stdio.h>
 	<stdlib.h>
 	<locale.h>
 	"listaLigada.h"
 	"print.h"
 
-1656550163 d:\estudos\ed\study-data-structure\projetofinal\projetofinal\print.h
+1656777292 d:\estudos\ed\study-data-structure\projetofinal\projetofinal\print.h
 
-1656551388 source:d:\estudos\ed\study-data-structure\projetofinal\projetofinal\print.c
+1656777303 source:d:\estudos\ed\study-data-structure\projetofinal\projetofinal\print.c
 	<stdio.h>
 	<stdlib.h>
 	"print.h"

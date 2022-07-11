@@ -4,6 +4,7 @@
 #include "listaLigada.h"
 #include "print.h"
 
+
 int contadorClientes = 0;
 void inserirContato(Lista *li);
 Cliente printEColetaDados();
@@ -52,14 +53,16 @@ int main(){
                 gerarRelatorioIndividualPorNome(li);
                 break;
             case 5:
-                // editarContato();
+                editarContato(li);
                 break;
             case 6:
-                // removerContato();
+                removerContato(li);
                 break;
             case 7:
                 printSair();
                 break;
+            case 8:
+                system("START https://www.youtube.com/watch?v=dQw4w9WgXcQ");
             default:
                 printf("Opção inválida\n");
                 break;
@@ -84,6 +87,34 @@ int main(){
 }
 
 
+void  editarContato(Lista *li){
+    printf("Digite o ID do contato que deseja editar: ");
+    int id;
+    scanf("%d", &id);
+    Cliente clienteBusca;
+    consulta_lista_codigo(li, id, &clienteBusca);
+    printf("Digite o nome do contato: ");
+    scanf("%s", clienteBusca.nome);
+
+    for(int i = 0; i < 30; i++){
+        clienteBusca.nome[i] = toupper(clienteBusca.nome[i]);
+    }
+    printf("Digite o nome da empresa do contato: ");
+    scanf("%s", clienteBusca.empresa);
+    printf("Digite o nome do departamento do contato: ");
+    scanf("%s", clienteBusca.departamento);
+    printf("Digite o telefone do contato: ");
+    scanf("%s", clienteBusca.telefone);
+    printf("Digite o celular do contato: ");
+    scanf("%s", clienteBusca.celular);
+    printf("Digite o email do contato: ");
+    scanf("%s", clienteBusca.email);
+    remove_lista(li, id);
+    insere_lista_ordenada(li, clienteBusca);
+
+
+}
+
 void gerarRelatorioIndividualPorID(Lista *li){
     int id;
     printf("Digite o ID do contato: ");
@@ -100,14 +131,37 @@ void gerarRelatorioIndividualPorID(Lista *li){
         printf("Celular: %s\n", clienteBusca.celular);
         printf("Email: %s\n", clienteBusca.email);
 
-        fflush(stdin);
-        getch();
-        printf("Pressione qualquer tecla para continuar");
+        printPressioneQualquerTecla();
     }
 }
 
 void gerarRelatorioIndividualPorNome(Lista *li){
-    
+    char nome[30];
+    printf("Digite o nome do contato: ");
+    scanf("%s", nome);
+
+    //converter para maiusculo
+    for(int i = 0; i < 30; i++){
+        nome[i] = toupper(nome[i]);
+    }
+
+
+    for(int i = 0; i < contadorClientes; i++){
+        Cliente clienteBusca;
+        consulta_lista_pos(li, i+1, &clienteBusca);
+        if(strcmp(clienteBusca.nome, nome) == 0){
+            printf("Codigo: %d\n", clienteBusca.codigo);
+            printf("Nome: %s\n", clienteBusca.nome);
+            printf("Empresa: %s\n", clienteBusca.empresa);
+            printf("Telefone: %s\n", clienteBusca.telefone);
+            printf("Celular: %s\n", clienteBusca.celular);
+            printf("Email: %s\n", clienteBusca.email);
+            fflush(stdin);
+            getch();
+        }
+        fflush(stdin);
+        getch();
+    }
 }
 
 void inserirContato(Lista *li){
@@ -125,6 +179,10 @@ Cliente printEColetaDados(){
     printf("\n\n");
     printf("Digite o nome do contato: ");
     scanf("%s", cl.nome);
+
+    for(int i = 0; i < 30; i++){
+        cl.nome[i] = toupper(cl.nome[i]);
+    }
     printf("Digite o nome da empresa do contato: ");
     scanf("%s", cl.empresa);
     printf("Digite o nome do departamento do contato: ");
@@ -160,4 +218,13 @@ void gerarRelatorioTotal(Lista *li){
     }
     fflush(stdin);
     getch();
+}
+
+
+void removerContato(Lista *li){
+    printf("Digite o ID do contato que deseja remover: ");
+    int id;
+    scanf("%d", &id);
+    remove_lista(li, id);
+    contadorClientes = tamLista(li);
 }

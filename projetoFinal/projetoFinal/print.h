@@ -4,3 +4,4 @@ void printInicio();
 void printMenu();
 void printSair();
 
+void printPressioneQualquerTecla();
